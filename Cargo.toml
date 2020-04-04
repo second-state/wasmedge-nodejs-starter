@@ -3,6 +3,7 @@ name = "ssvm_nodejs_starter"
 version = "0.1.0"
 authors = ["ubuntu"]
 edition = "2018"
+wasm-opt = false
 
 [lib]
 name = "ssvm_nodejs_starter_lib"
