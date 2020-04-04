@@ -5,7 +5,7 @@ authors = ["ubuntu"]
 edition = "2018"
 
 [package.metadata.ssvmup.profile.release]
-wasm-opt = true
+wasm-opt = ['-O4']
 
 [lib]
 name = "ssvm_nodejs_starter_lib"
