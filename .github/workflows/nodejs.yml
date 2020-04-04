@@ -36,10 +36,8 @@ jobs:
     - name: Build
       run: ssvmup build
     
-    - name: Copy artifacts
-      run: |
-        cp pkg/ssvm_nodejs_starter_lib.js node/
-        cp pkg/ssvm_nodejs_starter_lib_bg.wasm node/
+    - name: Post-build
+      run: cp pkg/* node/
     
     - name: Test
       run: node node/test.js
