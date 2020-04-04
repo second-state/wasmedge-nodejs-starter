@@ -1,0 +1,39 @@
+name: ssvmup
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install apt-get packages
+      run: |
+        sudo apt-get -y upgrade
+        sudo apt-get install build-essential curl wget git vim libboost-all-dev
+    - name: Install npm packages
+      run: |
+        npm install -g ssvmup
+        npm install ssvm
+    - name: Build
+      run: ssvmup build
+    - name: Copy artifacts
+      run: |
+        cp pkg/ssvm_nodejs_starter_lib.js node/
+        cp pkg/ssvm_nodejs_starter_lib_bg.wasm node/
+    - name: Test
+      run: node node/test.js
