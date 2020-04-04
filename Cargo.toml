@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["ubuntu"]
 edition = "2018"
 
-[package.metadata.wasm-pack.profile.release]
+[package.metadata.ssvmup.profile.release]
 wasm-opt = false
 
 [lib]
