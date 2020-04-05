@@ -19,3 +19,5 @@ Resources
 * [The SSVM NPM addon](https://github.com/second-state/ssvm-napi) provides access to the SSVM, and programs in it, through a Node.js host application.
 * [The SSVM ready tool, ssvmup](https://github.com/second-state/ssvmup) is a toolchain for compiling Rust programs into WebAssembly, and then make them accessible from JavaScripts via the SSVM.
 
+Brought to you by the Open source dev team at [Second State](https://www.secondstate.io/). Follow us on [Twitter](https://twitter.com/secondstateinc), [Facebook](https://www.facebook.com/SecondState.io/), [LinkedIn](https://www.linkedin.com/company/second-state/), [YouTube](https://www.youtube.com/channel/UCePMT5duHcIbJlwJRSOPDMQ), or [Medium](https://medium.com/wasm)
+
