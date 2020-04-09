@@ -1,6 +1,6 @@
 # Getting started
 
-![ssvmup](https://github.com/second-state/ssvm-nodejs-starter/workflows/ssvmup/badge.svg)
+![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/ssvmup/badge.svg)
 
 Fork this project to create your own JavaScript + Rust hybrid application in Node.js.
 
