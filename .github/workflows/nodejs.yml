@@ -25,7 +25,6 @@ jobs:
 
     - name: Install apt-get packages
       run: |
-        sudo apt-get -y upgrade
         sudo apt-get install build-essential curl wget git vim libboost-all-dev
     
     - name: Install npm packages
