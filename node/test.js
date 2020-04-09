@@ -12,7 +12,7 @@ console.log( lowest_common_denominator(123, 2) );
 console.hex( sha3_digest(encoder.encode("This is an important message")) );
 console.hex( keccak_digest(encoder.encode("This is an important message")) );
 
-var p1 = {x:1.5, y:3.8};
-var p2 = {x:2.5, y:5.8};
+var p1 = {"x":1.5, "y":3.8};
+var p2 = {"x":2.5, "y":5.8};
 var line = JSON.parse(create_line(p1, p2, "A thin red line"));
 console.log( line );
