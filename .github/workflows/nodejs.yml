@@ -1,4 +1,4 @@
-name: ssvmup
+name: Build and test
 
 on:
   push:
