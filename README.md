@@ -6,6 +6,7 @@ Fork this project to create your own JavaScript + Rust hybrid application in Nod
 
 * The Rust functions are in the `src` directory. You can put high performance workload into Rust functions.
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
+* Use the `node node/test.js` command to run the test cases.
 * Use the `node node/app.js` command to run the application in Node.js.
 
 Read more:
