@@ -2,7 +2,7 @@
 
 ![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/Build%20and%20test/badge.svg)
 
-[Fork this project](https://github.com/second-state/ssvm-nodejs-starter) to create your own JavaScript + Rust hybrid application in Node.js. [Learn more](https://docs.secondstate.io/beginners-guide-to-webassembly/webassembly-on-the-server-side/the-no-software-approach)
+[Fork this project](https://github.com/second-state/ssvm-nodejs-starter) to create your own JavaScript + Rust hybrid application in Node.js. [Learn more](https://docs.secondstate.io/server-side-webassembly/webassembly-on-the-server-side/the-no-software-approach)
 
 * The Rust functions are in the `src` directory. You can put high performance workload into Rust functions.
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
@@ -11,8 +11,8 @@
 
 Read more:
 
-* [The Case for WebAssembly on the Server-side](https://docs.secondstate.io/serverless-cloud/the-case-for-webassembly-on-the-server-side)
-* [Guide on how to Rust and WebAssembly for server-side apps](https://docs.secondstate.io/beginners-guide-to-webassembly/webassembly-on-the-server-side)
+* [The Case for WebAssembly on the Server-side](https://docs.secondstate.io/server-side-webassembly/the-case-for-webassembly-on-the-server-side)
+* [Guide on how to Rust and WebAssembly for server-side apps](https://docs.secondstate.io/server-side-webassembly/webassembly-on-the-server-side)
 
 Resources
 
