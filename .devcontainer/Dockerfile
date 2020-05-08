@@ -35,7 +35,8 @@ RUN apt-get update \
     && apt-get -y install git openssh-client less iproute2 procps lsb-release \
     #
     # Install lldb, vadimcn.vscode-lldb VSCode extension dependencies
-    && apt-get install -y lldb python3-minimal libpython3.7 \
+    # && apt-get install -y lldb python3-minimal libpython3.7 \
+    && apt-get install -y lldb python3-minimal \
     #
     # Install Rust components
     && rustup update 2>&1 \
