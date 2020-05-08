@@ -34,12 +34,6 @@ jobs:
     
     - name: Build
       run: ssvmup build
-    
-    - name: Post-build
-      run: cp pkg/* node/
-    
-    - name: Test
-      run: node node/test.js
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1
