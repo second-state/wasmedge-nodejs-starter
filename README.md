@@ -12,11 +12,9 @@
 
 This project template works with the VSCode Codespaces online IDE! Code, build, and run directly from inside the browser. No software download or install needed!
 
-> About the cost: the web verison of VSCode costs around $1 per work day. It is cheaper than a cup of coffee in the office.
+> About the cost: the web verison of VSCode costs around $1 per work day. It is cheaper than a cup of coffee in the office. Alternatively, in steps 1-2, you could use locally installed VSCode and Docker, and [launch the IDE with your remote git repository](https://code.visualstudio.com/remote-tutorials/containers/getting-started).
 
 1 First, open the [VSCode Codespaces](https://online.visualstudio.com/) web site and login with your Azure account. You can get a [free Azure account](https://azure.microsoft.com/en-us/free/).
-
-https://online.visualstudio.com/
 
 2 Next, create a new Codespace. Put your forked repository into the Git Repository field.
 
