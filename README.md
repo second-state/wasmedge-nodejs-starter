@@ -42,7 +42,7 @@ The Debug window shows the Node.js server running and waiting for web requests.
 
 ![Browser link](docs/img/vscode_port.png)
 
-Or, you could open another terminal window in the IDE via the `Terminal Open Terminal` menu.
+Or, you could open another terminal window in the IDE via the `Terminal -> New Terminal` menu.
 
 ![Open Terminal](docs/img/vscode_terminal.png)
 
