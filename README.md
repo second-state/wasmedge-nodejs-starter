@@ -6,15 +6,71 @@
 
 * The Rust functions are in the `src` directory. You can put high performance workload into Rust functions.
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
-* Use the `node node/test.js` command to run the test cases.
 * Use the `node node/app.js` command to run the application in Node.js.
 
-Read more:
+## Use VSCode Codespace
+
+This project template works with the VSCode Codespaces online IDE! Code, build, and run directly from inside the browser. No software download or install needed!
+
+> About the cost: the web verison of VSCode costs around $1 per work day. It is cheaper than a cup of coffee in the office.
+
+1 First, open the [VSCode Codespaces](https://online.visualstudio.com/) web site and login with your Azure account. You can get a [free Azure account](https://azure.microsoft.com/en-us/free/).
+
+https://online.visualstudio.com/
+
+2 Next, create a new Codespace from your forked repository.
+
+![Create a new Codespace](docs/img/vscode_create.png)
+
+3 Then open the `src/lib.rs`, `node/app.js` and `Cargo.toml` files and see how the Node.js express app calls the Rust function to say hello.
+
+![Code in Codespace](docs/img/vscode_code.png)
+
+4 Click on the Run button on the left panel, and then the Launch Program at the top to build and run the application.
+
+![Build and run](docs/img/vscode_run.png)
+
+The Terminal window at the bottom shows the build progress. It builds the Rust program, and then launches the Node.js app.
+
+![Build](docs/img/vscode_build.png)
+
+The Debug window shows the Node.js server running and waiting for web requests.
+
+![Debug](docs/img/vscode_debug.png)
+
+5 Now, you have two choices. You could use the proxy link for `127.0.0.1:3000` to access the running server in a browser.
+
+![Browser link](docs/img/vscode_port.png)
+
+Or, you could open another terminal window in the IDE via the `Terminal Open Terminal` menu.
+
+![Open Terminal](docs/img/vscode_terminal.png)
+
+From the terminal window, you can test the local server.
+
+```
+$ curl http://127.0.0.1:3000/?name=SSVM
+hello SSVM
+```
+
+### More exercises
+
+Now, you can copy and paste code from [this project](https://github.com/second-state/wasm-learning/tree/master/nodejs/functions).
+
+* `src/lib.rs` --> Replace with [code here](https://github.com/second-state/wasm-learning/blob/master/nodejs/functions/src/lib.rs)
+* `Cargo.toml` --> Replace with [code here](https://github.com/second-state/wasm-learning/blob/master/nodejs/functions/Cargo.toml)
+* `node/app.js` --> Replace with [code here](https://github.com/second-state/wasm-learning/blob/master/nodejs/functions/node/app.js)
+
+Click on Run to see the build output in Terminal window, and application console output in Debug window.
+
+Try to log into GitHub from the IDE, and use the IDE's GitHub integration features to commit the changes, push the changes back into your forked repository, and perhaps even send us a Pull Request from the IDE!
+
+## Read more:
 
 * [The Case for WebAssembly on the Server-side](https://cloud.secondstate.io/server-side-webassembly/why)
 * [Guide on how to Rust and WebAssembly for server-side apps](https://cloud.secondstate.io/server-side-webassembly/getting-started)
 
-Resources
+## Resources
 
 * [The Second State VM (SSVM)](https://github.com/second-state/ssvm) is a high performance WebAssembly virtual machine designed for server-side applications.
 * [The SSVM NPM addon](https://github.com/second-state/ssvm-napi) provides access to the SSVM, and programs in it, through a Node.js host application.
