@@ -18,7 +18,7 @@ This project template works with the VSCode Codespaces online IDE! Code, build, 
 
 https://online.visualstudio.com/
 
-2 Next, create a new Codespace from your forked repository.
+2 Next, create a new Codespace. Put your forked repository into the Git Repository field.
 
 ![Create a new Codespace](docs/img/vscode_create.png)
 
