@@ -37,7 +37,7 @@ RUN apt-get update \
     # Install ssvmup
     #
     && apt-get install -y build-essential curl wget git vim libboost-all-dev \
-    && npm install -g ssvmup \
+    && sudo npm install -g ssvmup \
     && npm install ssvm \
     #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
