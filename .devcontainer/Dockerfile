@@ -32,7 +32,7 @@ RUN apt-get update \
     # The Rust stuff
     #
     # Install Rustup
-    && curl https://sh.rustup.rs -sSf | sh \
+    && curl https://sh.rustup.rs -sSf | sh -s -- -y \
     #
     # Verify git, needed tools installed
     && apt-get -y install git openssh-client less iproute2 procps lsb-release \
