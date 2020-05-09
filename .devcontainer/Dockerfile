@@ -45,7 +45,7 @@ RUN apt-get update \
     # Install ssvmup
     #
     && apt-get install -y build-essential curl wget git vim libboost-all-dev \
-    && sudo npm install -g ssvmup \
+    && npm install ssvmup \
     && npm install ssvm \
     #
     # Clean up
