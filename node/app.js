@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   // res.end(say("Michael"));
-  res.end(say(queryObject['name']));
+  res.end(say(queryObject['name']) + '\n');
 });
 
 server.listen(port, hostname, () => {
