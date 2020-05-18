@@ -10,6 +10,12 @@
 
 ## Use VSCode Codespace
 
+<p>
+    <a href="https://online.visualstudio.com/environments/new?name=Rust%20and%20WebAssembly%20in%20Node.js&repo=second-state/ssvm-nodejs-starter">
+        <img src="https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Faka.ms%2Fvso-badge">
+    </a>
+</p>
+
 This project template works with the VSCode Codespaces online IDE! Code, build, and run directly from inside the browser. No software download or install needed!
 
 > VSCode Codespaces runs entirely in your browser and costs around $1 per work day. It is cheaper than a cup of coffee in the office. Alternatively, in steps 1-2 below, you could use locally installed VSCode and Docker, and [launch the IDE with your remote git repository](https://code.visualstudio.com/remote-tutorials/containers/getting-started).
