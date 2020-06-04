@@ -3,7 +3,7 @@
     "tasks": [{
         "label": "ssvmup build",
         "type": "shell",
-        "command": "ssvmup build --nowasi",
+        "command": "ssvmup build",
         "args": [],
         "problemMatcher": []
     }]
