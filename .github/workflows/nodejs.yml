@@ -34,6 +34,11 @@ jobs:
     
     - name: Build
       run: ssvmup build
+      
+    - name: Test
+      run: |
+        node node/test.js
+        ssvmup clean
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1
