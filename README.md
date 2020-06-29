@@ -73,14 +73,14 @@ Try to log into GitHub from the IDE, and use the IDE's GitHub integration featur
 
 ## Read more:
 
-* [The Case for WebAssembly on the Server-side](https://cloud.secondstate.io/server-side-webassembly/why)
-* [Guide on how to Rust and WebAssembly for server-side apps](https://cloud.secondstate.io/server-side-webassembly/getting-started)
+* [The Case for WebAssembly on the Server-side](https://www.secondstate.io/articles/why-webassembly-server/)
+* [Guide on how to Rust and WebAssembly for server-side apps](https://www.secondstate.io/articles/getting-started-with-rust-function/)
 
 ## Resources
 
-* [The Second State VM (SSVM)](https://github.com/second-state/ssvm) is a high performance WebAssembly virtual machine designed for server-side applications.
+* [The Second State VM (SSVM)](https://github.com/second-state/ssvm) is a high performance [WebAssembly virtual machine](https://www.secondstate.io/ssvm/) designed for server-side applications.
 * [The SSVM NPM addon](https://github.com/second-state/ssvm-napi) provides access to the SSVM, and programs in it, through a Node.js host application.
-* [The SSVM ready tool, ssvmup](https://github.com/second-state/ssvmup) is a toolchain for compiling Rust programs into WebAssembly, and then make them accessible from JavaScripts via the SSVM.
+* [The SSVM ready tool, ssvmup](https://github.com/second-state/ssvmup) is a [toolchain](https://www.secondstate.io/articles/ssvmup/) for compiling Rust programs into WebAssembly, and then make them accessible from JavaScripts via the SSVM.
 
 Brought to you by the Open source dev team at [Second State](https://www.secondstate.io/). Follow us on [Twitter](https://twitter.com/secondstateinc), [Facebook](https://www.facebook.com/SecondState.io/), [LinkedIn](https://www.linkedin.com/company/second-state/), [YouTube](https://www.youtube.com/channel/UCePMT5duHcIbJlwJRSOPDMQ), or [Medium](https://medium.com/wasm)
 
