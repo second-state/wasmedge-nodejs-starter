@@ -8,11 +8,12 @@
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
 * Use the `node node/app.js` command to run the application in Node.js.
 
+
 ## Use Docker to build and run
 
 ```
-$ docker build -t ssvm-nodejs:v1 .
-$ docker run -p 3000:3000 --rm -it -v $(pwd):/app ssvm-nodejs:v1
+$ docker pull secondstate/ssvm-nodejs-starter:v1
+$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1
 (docker) # cd /app
 (docker) # ssvmup build
 (docker) # node node/app.js
