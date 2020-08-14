@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "ssvmup build",
+        "type": "shell",
+        "command": "ssvmup build",
+        "args": [],
+        "problemMatcher": []
+    }]
+}

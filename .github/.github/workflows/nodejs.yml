@@ -1,0 +1,47 @@
+name: Build and test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install apt-get packages
+      run: |
+        sudo apt-get install build-essential curl wget git vim libboost-all-dev
+    
+    - name: Install npm packages
+      run: |
+        npm install -g ssvmup
+        npm install ssvm
+    
+    - name: Build
+      run: ssvmup build
+      
+    - name: Test
+      run: |
+        node node/test.js
+        ssvmup clean
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: ubuntu-18.04-nodejs-${{ matrix.node-version }}
+        path: node
