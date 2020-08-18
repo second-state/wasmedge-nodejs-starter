@@ -18,7 +18,11 @@ pub fn fibonacci(n: u32) -> u32 {
 
 #[wasm_bindgen]
 pub fn is_prime(x: i32) -> String {
-  let num_bool = (2..x).all(|i| x % i != 0) as i32;
-  let s: String = num_bool.to_string();
-  return s;
+  let num_bool = (2..x).all(|i| x % i != 0);
+  if num_bool {
+    return String::from("True");
+  } else {
+    return String::from("False");
+  }
+  
 }
