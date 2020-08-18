@@ -1,5 +1,11 @@
 use wasm_bindgen::prelude::*;
 
+extern crate num_bigint as bigint;
+extern crate num_traits;
+
+use bigint::BigUint;
+use num_traits::{Zero, One};
+
 // #[wasm_bindgen]
 // pub fn say(s: &str) -> String {
 //   println!("The Rust function say() received {}", s);

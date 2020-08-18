@@ -15,4 +15,5 @@ crate-type =["cdylib"]
 [dependencies]
 num-bigint = "0.2.3"
 num-traits = "0.2.9"
+tramp = "0.3.0"
 wasm-bindgen = "=0.2.61"

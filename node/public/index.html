@@ -20,6 +20,15 @@ $(function() {
     };
     $('#solve').ajaxForm(options);
 });
+
+$(function() {
+    var options = {
+      target: '#get_fibo',
+      url: "/fibonacci",
+      type: "post"
+    };
+    $('#getting').ajaxForm(options);
+});
     </script>
   </head>
 
@@ -47,6 +56,28 @@ $(function() {
 
       <div class="jumbotron">
         <p class="lead">Is this number prime? <span id="check">Nothing entered</span></p>
+      </div>
+
+      <p class="lead">Getting Fibonacci term</p>
+
+      <form id="getting">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="text" class="form-control" name="num" placeholder="Enter number">
+            
+            </div>
+          </div>
+
+
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Check</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="jumbotron">
+        <p class="lead">The Fibonacci number is <span id="get_fibo">nothing entered</span></p>
       </div>
 
     </div> <!-- /container -->

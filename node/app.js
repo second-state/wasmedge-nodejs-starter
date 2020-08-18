@@ -27,6 +27,13 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => res.redirect("/index.html"));
 
+app.post('/fibonacci', function (req, res) {
+  let a = parseInt(req.body.num);
+  let result = fibonacci(a).toString();
+ 
+  res.send(result);
+})
+
 app.post('/is_prime', function (req, res) {
   let a = parseInt(req.body.num);
  
