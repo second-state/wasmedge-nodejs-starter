@@ -1,11 +1,11 @@
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen]
-pub fn say(s: &str) -> String {
-  println!("The Rust function say() received {}", s);
-  let r = String::from("hello ");
-  return r + s;
-}
+// #[wasm_bindgen]
+// pub fn say(s: &str) -> String {
+//   println!("The Rust function say() received {}", s);
+//   let r = String::from("hello ");
+//   return r + s;
+// }
 
 #[wasm_bindgen]
 pub fn fibonacci(n: u32) -> u32 {
@@ -14,4 +14,11 @@ pub fn fibonacci(n: u32) -> u32 {
       1 => 1,
       _ => fibonacci(n - 1) + fibonacci(n - 2),
   }
+}
+
+#[wasm_bindgen]
+pub fn is_prime(x: i32) -> String {
+  let num_bool = (2..x).all(|i| x % i != 0) as i32;
+  let s: String = num_bool.to_string();
+  return s;
 }

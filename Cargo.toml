@@ -13,4 +13,6 @@ path = "src/lib.rs"
 crate-type =["cdylib"]
 
 [dependencies]
+num-bigint = "0.2.3"
+num-traits = "0.2.9"
 wasm-bindgen = "=0.2.61"

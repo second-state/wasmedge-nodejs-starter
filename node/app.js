@@ -1,4 +1,4 @@
-const { fibonacci, say } = require('../pkg/ssvm_nodejs_starter_lib.js');
+const { fibonacci, is_prime } = require('../pkg/ssvm_nodejs_starter_lib.js');
 
 const http = require('http');
 const url = require('url');
@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
   const queryObject = url.parse(req.url,true).query;
   const num = parseInt(queryObject['number'], 10
   )
-  console.log('testing', fibonacci(num))
+  console.log('testing', is_prime(num))
 
   res.end()
 
