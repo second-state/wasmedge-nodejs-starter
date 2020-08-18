@@ -20,9 +20,9 @@ pub fn fibonacci(n: u32) -> u32 {
 pub fn is_prime(x: i32) -> String {
   let num_bool = (2..x).all(|i| x % i != 0);
   if num_bool {
-    return String::from("true");
+    return String::from("True");
   } else {
-    return String::from("false");
+    return String::from("False");
   }
   
 }

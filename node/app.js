@@ -29,7 +29,6 @@ app.get('/', (req, res) => res.redirect("/index.html"));
 
 app.post('/is_prime', function (req, res) {
   let a = parseInt(req.body.num);
-  //let result = null;
  
   res.send(is_prime(a));
 })
