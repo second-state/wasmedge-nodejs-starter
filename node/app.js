@@ -52,8 +52,8 @@ app.post('/js_fibonacci', function (req, res) {
 
 app.post('/is_prime', function (req, res) {
   let a = parseInt(req.body.num);
- 
-  res.send(is_prime(a));
+  let result = is_prime(a)
+  res.send(result);
 })
 
 app.post('/js_is_prime', function (req, res) {
