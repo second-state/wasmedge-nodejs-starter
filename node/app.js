@@ -29,7 +29,7 @@ app.get('/', (req, res) => res.redirect("/index.html"));
 
 app.post('/fibonacci', function (req, res) {
   let a = parseInt(req.body.num);
-  let result = fibonacci(a, 0, 1).toString();
+  let result = fibonacci(a).toString();
  
   res.send(result);
 })
