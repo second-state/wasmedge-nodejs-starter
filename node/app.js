@@ -38,9 +38,9 @@ app.post('/js_fibonacci', function (req, res) {
 
   function fibonacciJS(num, memo) {
     memo = memo || {};
-  
+
     if (memo[num]) return memo[num];
-    if (num <= 1) return 1;
+    if (num < 2) return num;
   
     return memo[num] = fibonacciJS(num - 1, memo) + fibonacciJS(num - 2, memo);
   }
