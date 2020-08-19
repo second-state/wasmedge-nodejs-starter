@@ -13,21 +13,63 @@
 
     <script>
 $(function() {
-    var options = {
+
+    const start1 = new Date().getTime();
+    var options1 = {
       target: '#check',
       url: "/is_prime",
-      type: "post"
+      type: "post",
+       success: function(data) {
+        alert('This request took '+(new Date().getTime() - start1)+' ms');
+    }
     };
-    $('#solve').ajaxForm(options);
+    $('#solve').ajaxForm(options1);
 });
 
 $(function() {
-    var options = {
+
+const start2 = new Date().getTime();
+
+var options2 = {
+  target: '#js_check',
+  url: "/js_is_prime",
+  type: "post",
+   success: function(data) {
+    alert('This request took '+(new Date().getTime() - start2)+' ms');
+}
+};
+
+$('#solveJS').ajaxForm(options2);
+});
+
+$(function() {
+
+    const start3 = new Date().getTime();
+
+    var options3 = {
       target: '#get_fibo',
       url: "/fibonacci",
-      type: "post"
+      type: "post",
+       success: function(data) {
+        alert('This request took '+(new Date().getTime() - start3)+' ms');
+    }
     };
-    $('#getting').ajaxForm(options);
+    $('#getting').ajaxForm(options3);
+});
+
+$(function() {
+
+const start4 = new Date().getTime();
+
+var options4= {
+  target: '#get_fiboJS',
+  url: "/js_fibonacci",
+  type: "post",
+   success: function(data) {
+    alert('This request took '+(new Date().getTime() - start4)+' ms');
+}
+};
+$('#gettingJS').ajaxForm(options4);
 });
     </script>
   </head>
@@ -36,7 +78,7 @@ $(function() {
     <div class="container">
 
       <h1>Calling Rust functions in Node.js</h1>
-      <p class="lead">Checking if a number is prime</p>
+      <p class="lead">Checking if a number is prime(Rust/WebAssembly)</p>
 
       <form id="solve">
         <div class="form-row align-items-center">
@@ -58,7 +100,29 @@ $(function() {
         <p class="lead">Is this number prime? <span id="check">Nothing entered</span></p>
       </div>
 
-      <p class="lead">Getting Fibonacci term</p>
+      <p class="lead">Checking if a number is prime(JavaScript/Node.js)</p>
+
+      <form id="solveJS">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="text" class="form-control" name="num" placeholder="Enter number">
+            
+            </div>
+          </div>
+
+
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Check</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="jumbotron">
+        <p class="lead">Is this number prime? <span id="js_check">Nothing entered</span></p>
+      </div>
+
+      <p class="lead">Getting Fibonacci term(Rust/WebAssembly)</p>
 
       <form id="getting">
         <div class="form-row align-items-center">
@@ -77,7 +141,29 @@ $(function() {
       </form>
 
       <div class="jumbotron">
-        <p class="lead">The Fibonacci number is <span id="get_fibo">nothing entered</span></p>
+        <p class="lead">The Fibonacci number is: <span id="get_fibo">nothing entered</span></p>
+      </div>
+
+      <p class="lead">Getting Fibonacci term(JavaScript/Node.js)</p>
+
+      <form id="gettingJS">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="text" class="form-control" name="num" placeholder="Enter number">
+            
+            </div>
+          </div>
+
+
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Check</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="jumbotron">
+        <p class="lead">The Fibonacci number is: <span id="get_fiboJS">nothing entered</span></p>
       </div>
 
     </div> <!-- /container -->

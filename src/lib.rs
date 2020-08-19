@@ -14,11 +14,11 @@ use num_traits::{Zero, One};
 // }
 
 #[wasm_bindgen]
-pub fn fibonacci(n: u32) -> u32 {
-  match n {
-    0 | 1 => n,
-    _ => fibonacci(n - 1) + fibonacci(n - 2),
+pub fn fibonacci(n: u32, a: u32, b: u32) -> u32 {
+  if n < 1 {
+    return a
   }
+  fibonacci(n - 1, b, a + b)
 }
 
 #[wasm_bindgen]

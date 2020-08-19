@@ -29,8 +29,24 @@ app.get('/', (req, res) => res.redirect("/index.html"));
 
 app.post('/fibonacci', function (req, res) {
   let a = parseInt(req.body.num);
-  let result = fibonacci(a).toString();
+  let result = fibonacci(a, 0, 1).toString();
  
+  res.send(result);
+})
+
+app.post('/js_fibonacci', function (req, res) {
+
+  function fibonacciJS(num, memo) {
+    memo = memo || {};
+  
+    if (memo[num]) return memo[num];
+    if (num <= 1) return 1;
+  
+    return memo[num] = fibonacciJS(num - 1, memo) + fibonacciJS(num - 2, memo);
+  }
+   let a = parseInt(req.body.num);
+   let result = fibonacciJS(a).toString();
+
   res.send(result);
 })
 
@@ -38,6 +54,19 @@ app.post('/is_prime', function (req, res) {
   let a = parseInt(req.body.num);
  
   res.send(is_prime(a));
+})
+
+app.post('/js_is_prime', function (req, res) {
+
+  const isPrime = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if(num % i === 0) return false; 
+    return num > 1;
+}
+   let a = parseInt(req.body.num);
+   let result = isPrime(a).toString();
+ 
+  res.send(result);
 })
 
 app.listen(port, () => 
