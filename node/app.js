@@ -28,7 +28,13 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => res.redirect("/index.html"));
 
 app.post('/fibonacci', function (req, res) {
+
   let a = parseInt(req.body.num);
+
+  if (typeof a !== 'number') {
+    res.send('Not a valid number');
+  }
+  
   let result = fibonacci(a).toString();
  
   res.send(result);
@@ -45,13 +51,22 @@ app.post('/js_fibonacci', function (req, res) {
     return memo[num] = fibonacciJS(num - 1, memo) + fibonacciJS(num - 2, memo);
   }
    let a = parseInt(req.body.num);
+
+   if (typeof a !== 'number') {
+    res.send('Not a valid number');
+  }
    let result = fibonacciJS(a).toString();
 
   res.send(result);
 })
 
 app.post('/is_prime', function (req, res) {
-  let a = parseInt(req.body.num);
+  let a = parseInt(req.body.num, 10);
+
+  if (typeof a !== 'number') {
+    res.send('Not a valid number');
+  }
+
   let result = is_prime(a)
   res.send(result);
 })
@@ -64,6 +79,11 @@ app.post('/js_is_prime', function (req, res) {
     return num > 1;
 }
    let a = parseInt(req.body.num);
+
+   if (typeof a !== 'number') {
+    res.send('Not a valid number');
+  }
+
    let result = isPrime(a).toString();
  
   res.send(result);

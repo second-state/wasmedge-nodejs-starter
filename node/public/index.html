@@ -12,65 +12,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script>
-$(function() {
 
-    let start1 = new Date().getTime();
-    var options1 = {
-      target: '#check',
-      url: "/is_prime",
-      type: "post",
-       success: function(data) {
-        alert('This request took '+(new Date().getTime() - start1)+' ms');
-    }
-    };
-    $('#solve').ajaxForm(options1);
+
+function submitForm(t_url,t_data, t_answer) {
+
+    let start = new Date().getTime();
+
+$.ajax({
+  type: 'POST',
+  url: t_url,
+  data: {'num': t_data},
+  success: function(data) {
+    t_answer.html(data);
+    alert('This request took '+(new Date().getTime() - start)+' ms');
+  }
 });
-
-$(function() {
-
-let start2 = new Date().getTime();
-
-var options2 = {
-  target: '#js_check',
-  url: "/js_is_prime",
-  type: "post",
-   success: function(data) {
-    alert('This request took '+(new Date().getTime() - start2)+' ms');
 }
-};
 
-$('#solveJS').ajaxForm(options2);
-});
-
-$(function() {
-
-    let start3 = new Date().getTime();
-
-    var options3 = {
-      target: '#get_fibo',
-      url: "/fibonacci",
-      type: "post",
-       success: function(data) {
-        alert('This request took '+(new Date().getTime() - start3)+' ms');
-    }
-    };
-    $('#getting').ajaxForm(options3);
-});
-
-$(function() {
-
-let start4 = new Date().getTime();
-
-var options4= {
-  target: '#get_fiboJS',
-  url: "/js_fibonacci",
-  type: "post",
-   success: function(data) {
-    alert('This request took '+(new Date().getTime() - start4)+' ms');
-}
-};
-$('#gettingJS').ajaxForm(options4);
-});
     </script>
   </head>
 
@@ -80,11 +38,11 @@ $('#gettingJS').ajaxForm(options4);
       <h1>Calling Rust functions in Node.js</h1>
       <p class="lead">Checking if a number is prime(Rust/WebAssembly)</p>
 
-      <form id="solve">
+      <form id="solve" action='javascript: submitForm("/is_prime", $("#num1").val(), $("#check"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="text" class="form-control" name="num" placeholder="Enter number">
+              <input type="number" class="form-control" name="num" placeholder="Enter number" id="num1">
             
             </div>
           </div>
@@ -102,11 +60,11 @@ $('#gettingJS').ajaxForm(options4);
 
       <p class="lead">Checking if a number is prime(JavaScript/Node.js)</p>
 
-      <form id="solveJS">
+      <form id="solveJS" action='javascript: submitForm("/js_is_prime", $("#num2").val(), $("#js_check"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="text" class="form-control" name="num" placeholder="Enter number">
+              <input type="text" class="form-control" name="num" placeholder="Enter number" id="num2">
             
             </div>
           </div>
@@ -124,11 +82,11 @@ $('#gettingJS').ajaxForm(options4);
 
       <p class="lead">Getting Fibonacci term(Rust/WebAssembly)</p>
 
-      <form id="getting">
+      <form id="getting" action='javascript: submitForm("/fibonacci", $("#num3").val(), $("#get_fibo"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="text" class="form-control" name="num" placeholder="Enter number">
+              <input type="text" class="form-control" name="num" placeholder="Enter number" id="num3">
             
             </div>
           </div>
@@ -146,11 +104,11 @@ $('#gettingJS').ajaxForm(options4);
 
       <p class="lead">Getting Fibonacci term(JavaScript/Node.js)</p>
 
-      <form id="gettingJS">
+      <form id="gettingJS" action='javascript: submitForm("/js_fibonacci", $("#num4").val(), $("#get_fiboJS"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="text" class="form-control" name="num" placeholder="Enter number">
+              <input type="text" class="form-control" name="num" placeholder="Enter number" id="num4">
             
             </div>
           </div>
