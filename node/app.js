@@ -5,9 +5,10 @@ import path from 'path';
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 
-import pkg from '../pkg/ssvm_nodejs_starter_lib.js';
-const { fibonacci, is_prime } = pkg;
-
+//experimenting with async imports
+const wasm = await import('../pkg/ssvm_nodejs_starter_lib.js');
+const is_prime = wasm.default.is_prime;
+const fibonacci = wasm.default.fibonacci;
 
 const port = 3000;
 const hostname = '0.0.0.0';
