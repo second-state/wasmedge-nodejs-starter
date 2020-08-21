@@ -1,10 +1,10 @@
 use wasm_bindgen::prelude::*;
 
-extern crate num_bigint as bigint;
-extern crate num_traits;
+// extern crate num_bigint as bigint;
+// extern crate num_traits;
 
-use bigint::BigUint;
-use num_traits::{Zero, One};
+// use bigint::BigUint;
+// use num_traits::{Zero, One};
 
 // #[wasm_bindgen]
 // pub fn say(s: &str) -> String {

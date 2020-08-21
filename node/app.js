@@ -1,10 +1,16 @@
-const express = require('express');
-const { fibonacci, is_prime } = require('../pkg/ssvm_nodejs_starter_lib.js');
+'use strict';
+
+import express from 'express';
+import path from 'path';
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const app = express();
+
+import pkg from '../pkg/ssvm_nodejs_starter_lib.js';
+const { fibonacci, is_prime } = pkg;
 
 // const http = require('http');
 // const url = require('url');
 // const hostname = '0.0.0.0';
-const app = express();
 const port = 3000;
 const hostname = '0.0.0.0';
 app.use(express.static(__dirname + '/public'));
@@ -34,8 +40,10 @@ app.post('/fibonacci', function (req, res) {
   if (typeof a !== 'number') {
     res.send('Not a valid number');
   }
-  
+
+  console.time();
   let result = fibonacci(a).toString();
+  console.timeEnd();
  
   res.send(result);
 })
@@ -55,7 +63,10 @@ app.post('/js_fibonacci', function (req, res) {
    if (typeof a !== 'number') {
     res.send('Not a valid number');
   }
-   let result = fibonacciJS(a).toString();
+
+  console.time();
+  let result = fibonacciJS(a).toString();
+  console.timeEnd();
 
   res.send(result);
 })
@@ -67,7 +78,10 @@ app.post('/is_prime', function (req, res) {
     res.send('Not a valid number');
   }
 
-  let result = is_prime(a)
+
+  console.time();
+  let result = is_prime(a);
+  console.timeEnd();
   res.send(result);
 })
 
@@ -78,7 +92,10 @@ app.post('/js_is_prime', function (req, res) {
         if(num % i === 0) return false; 
     return num > 1;
 }
+
+   console.time();
    let a = parseInt(req.body.num);
+   console.timeEnd();
 
    if (typeof a !== 'number') {
     res.send('Not a valid number');
