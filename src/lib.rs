@@ -1,5 +1,11 @@
 use wasm_bindgen::prelude::*;
 
+// extern crate num_bigint as bigint;
+// extern crate num_traits;
+
+// use bigint::BigUint;
+// use num_traits::{Zero, One};
+
 // #[wasm_bindgen]
 // pub fn say(s: &str) -> String {
 //   println!("The Rust function say() received {}", s);
@@ -9,16 +15,24 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub fn fibonacci(n: u32) -> u32 {
-  match n {
-      0 => 1,
-      1 => 1,
-      _ => fibonacci(n - 1) + fibonacci(n - 2),
-  }
+  let mut memo = (0, 1);
+    match n {
+        0 | 1 => n,
+        _ => {
+            for _ in 2..=n {
+                memo = (memo.1, memo.0 + memo.1)
+            }
+            memo.1
+        }
+    }
 }
 
 #[wasm_bindgen]
-pub fn is_prime(x: i32) -> String {
-  let num_bool = (2..x).all(|i| x % i != 0);
+pub fn is_prime(n: i32) -> String {
+  let num_bool = (2..n)
+    .take_while(|divisor| divisor * divisor <= n)
+    .all(|divisor| n % divisor != 0);
+
   if num_bool {
     return String::from("True");
   } else {
