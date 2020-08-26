@@ -23,11 +23,10 @@ $.ajax({
   url: t_url,
   data: {'num': t_data},
   success: function(results) {
-    console.log(results, b_answer)
+   
     t_answer.html(results.num);
-    
     b_answer.html(results.bench.toFixed(2))
-    // alert('This request took '+(new Date().getTime() - start)+' ms');
+
   }
 });
 }

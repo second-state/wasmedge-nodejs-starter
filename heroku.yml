@@ -2,4 +2,4 @@ build:
     docker:
       web: Dockerfile
   run:
-    web: bundle exec puma -C config/puma.rb
+    web: docker run -p 8080:8080 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1 && cd /app && ssvmup build && node node/app.js
