@@ -14,7 +14,7 @@
     <script>
 
 
-function submitForm(t_url,t_data, t_answer) {
+function submitForm(t_url,t_data, t_answer, b_answer) {
 
     let start = new Date().getTime();
 
@@ -22,8 +22,11 @@ $.ajax({
   type: 'POST',
   url: t_url,
   data: {'num': t_data},
-  success: function(data) {
-    t_answer.html(data);
+  success: function(results) {
+    console.log(results, b_answer)
+    t_answer.html(results.num);
+    
+    b_answer.html(results.bench.toFixed(2))
     // alert('This request took '+(new Date().getTime() - start)+' ms');
   }
 });
@@ -38,7 +41,7 @@ $.ajax({
       <h1>Writing algorithms in Rust and using them in Node.js</h1>
       <p class="lead">Checking if a number is prime(Rust/WebAssembly)</p>
 
-      <form id="solve" action='javascript: submitForm("/is_prime", $("#num1").val(), $("#check"));' method='POST'>
+      <form id="solve" action='javascript: submitForm("/is_prime", $("#num1").val(), $("#check"), $("#primeRustbench"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
@@ -56,11 +59,13 @@ $.ajax({
 
       <div class="jumbotron">
         <p class="lead">Is this number prime? <span id="check">Nothing entered</span></p>
+        <p class="first">Benchmark: <span id="primeRustbench"></span></p>
       </div>
+    
 
       <p class="lead">Checking if a number is prime(JavaScript/Node.js)</p>
 
-      <form id="solveJS" action='javascript: submitForm("/js_is_prime", $("#num2").val(), $("#js_check"));' method='POST'>
+      <form id="solveJS" action='javascript: submitForm("/js_is_prime", $("#num2").val(), $("#js_check"), $("#primeJSbench"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
@@ -78,11 +83,13 @@ $.ajax({
 
       <div class="jumbotron">
         <p class="lead">Is this number prime? <span id="js_check">Nothing entered</span></p>
+        <p class="first">Benchmark: <span id="primeJSbench"></span></p>
       </div>
+ 
 
       <p class="lead">Getting nth Fibonacci term(Rust/WebAssembly)</p>
 
-      <form id="getting" action='javascript: submitForm("/fibonacci", $("#num3").val(), $("#get_fibo"));' method='POST'>
+      <form id="getting" action='javascript: submitForm("/fibonacci", $("#num3").val(), $("#get_fibo"), $("#fiboRustbench"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
@@ -100,11 +107,12 @@ $.ajax({
 
       <div class="jumbotron">
         <p class="lead">The Fibonacci number is: <span id="get_fibo">nothing entered</span></p>
+        <p class="third">Benchmark: <span id="fiboRustbench"></span></p>
       </div>
 
       <p class="lead">Getting Fibonacci term(JavaScript/Node.js)</p>
 
-      <form id="gettingJS" action='javascript: submitForm("/js_fibonacci", $("#num4").val(), $("#get_fiboJS"));' method='POST'>
+      <form id="gettingJS" action='javascript: submitForm("/js_fibonacci", $("#num4").val(), $("#get_fiboJS"),$("#fiboJSbench"));' method='POST'>
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
@@ -122,6 +130,7 @@ $.ajax({
 
       <div class="jumbotron">
         <p class="lead">The Fibonacci number is: <span id="get_fiboJS">nothing entered</span></p>
+        <p class="fourth">Benchmark: <span id="fiboJSbench"></span></p>
       </div>
 
     </div> <!-- /container -->

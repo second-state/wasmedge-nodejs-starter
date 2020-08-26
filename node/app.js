@@ -2,6 +2,12 @@
 
 import express from 'express';
 import path from 'path';
+
+import {
+  performance,
+  PerformanceObserver
+} from 'perf_hooks';
+
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 
@@ -10,7 +16,7 @@ const wasm = await import('../pkg/ssvm_nodejs_starter_lib.js');
 const is_prime = wasm.default.is_prime;
 const fibonacci = wasm.default.fibonacci;
 
-const port = 3000;
+const port = 8080;
 const hostname = '0.0.0.0';
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false }));
@@ -19,22 +25,23 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => res.redirect("/index.html"));
 
 app.post('/fibonacci', function (req, res) {
-
+  let result = {};
   let a = parseInt(req.body.num);
 
   if (typeof a !== 'number') {
     res.send('Not a valid number');
   }
 
-  console.time();
-  let result = fibonacci(a).toString();
-  console.timeEnd();
- 
-  res.send(result);
+  let t0 = performance.now();
+  result.num = fibonacci(a).toString();
+  let t1 = performance.now();
+  result.bench = t1-t0;
+  
+  res.json(result);
 })
 
 app.post('/js_fibonacci', function (req, res) {
-
+  let result = {};
   function fibonacciJS(num, memo) {
     memo = memo || {};
 
@@ -49,28 +56,32 @@ app.post('/js_fibonacci', function (req, res) {
     res.send('Not a valid number');
   }
 
-  console.time();
-  let result = fibonacciJS(a).toString();
-  console.timeEnd();
-
-  res.send(result);
+  let t0 = performance.now();
+  result.num = fibonacciJS(a).toString();
+  let t1 = performance.now();
+  result.bench = t1-t0;
+  
+  res.json(result);
 })
 
 app.post('/is_prime', function (req, res) {
+  let result = {};
   let a = parseInt(req.body.num, 10);
 
   if (typeof a !== 'number') {
     res.send('Not a valid number');
   }
 
-
-  console.time();
-  let result = is_prime(a);
-  console.timeEnd();
-  res.send(result);
+  let t0 = performance.now();
+  result.num = is_prime(a).toString();
+  let t1 = performance.now();
+  result.bench = t1-t0;
+  
+  res.json(result);
 })
 
 app.post('/js_is_prime', function (req, res) {
+  let result = {};
 
   const isPrime = num => {
     for(let i = 2, s = Math.sqrt(num); i <= s; i++)
@@ -78,17 +89,19 @@ app.post('/js_is_prime', function (req, res) {
     return num > 1;
 }
 
-   console.time();
+
    let a = parseInt(req.body.num);
-   console.timeEnd();
 
    if (typeof a !== 'number') {
     res.send('Not a valid number');
   }
 
-   let result = isPrime(a).toString();
- 
-  res.send(result);
+  let t0 = performance.now();
+  result.num = isPrime(a).toString();
+  let t1 = performance.now();
+  result.bench = t1-t0;
+  
+  res.json(result);
 })
 
 app.listen(port, () => 
