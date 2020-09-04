@@ -2,6 +2,11 @@
   "name": "ssvm-nodejs-starter",
   "description": "A template project to run Rust functions in Node.js through the Second State WebAssembly engine.",
   "stack": "container",
-  "env": {
+  "env":{
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": true
+    }
   }
-}
