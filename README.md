@@ -37,7 +37,7 @@ $ heroku stack:set container
 $ git push heroku master
 ...
 remote: Verifying deploy... done.
-To https://git.heroku.com/repo.git
+To https://git.heroku.com/ssvm-nodejs-starter.git
  * [new branch]      master -> master
 ```
 
