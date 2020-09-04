@@ -26,6 +26,20 @@ $ curl http://localhost:3000/?name=SSVM
 hello SSVM
 ```
 
+## Use Heroku to Deploy
+Use this button [![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nizam0906/ssvm-nodejs-starter)
+
+Or create a Heroku app manually:
+
+```
+$ heroku create
+$ heroku stack:set container
+$ git push heroku master
+...
+remote: Verifying deploy... done.
+To https://git.heroku.com/repo.git
+ * [new branch]      master -> master
+```
 
 ## Use VSCode Codespace
 
