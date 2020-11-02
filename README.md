@@ -12,8 +12,8 @@
 ## Use Docker to build and run
 
 ```
-$ docker pull secondstate/ssvm-nodejs-starter:v1
-$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1
+$ docker pull secondstate/ssvm-nodejs-starter:v2
+$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v2
 (docker) # cd /app
 (docker) # ssvmup build
 (docker) # node node/app.js
