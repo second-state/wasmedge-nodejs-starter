@@ -8,6 +8,8 @@
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
 * Use the `node node/app.js` command to run the application in Node.js.
 
+**Alternatively**, you can just upload your compiled Rust functions to a [Function-as-a-Service (FaaS)](https://www.secondstate.io/faas/) and make it available as a web service.
+
 ## Use Docker to build and run
 
 ```
@@ -75,7 +77,10 @@ Try to log into GitHub from the IDE, and use the IDE's GitHub integration featur
 ## Read more:
 
 * [The Case for WebAssembly on the Server-side](https://www.secondstate.io/articles/why-webassembly-server/)
-* [Guide on how to Rust and WebAssembly for server-side apps](https://www.secondstate.io/articles/getting-started-with-rust-function/)
+* [Getting started on Rust and WebAssembly for server-side apps](https://www.secondstate.io/articles/getting-started-with-rust-function/)
+* [Passing function arguments in JSON](https://www.secondstate.io/articles/rust-functions-in-nodejs/)
+* [Access operating system resources from WebAssembly (WASI)](https://www.secondstate.io/articles/wasi-access-system-resources/)
+* [Use Tensorflow and AI models from WebAssembly](https://www.secondstate.io/articles/face-detection-ai-as-a-service/)
 
 ## Resources
 
