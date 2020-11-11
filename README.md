@@ -8,7 +8,7 @@
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
 * Use the `node node/app.js` command to run the application in Node.js.
 
-**Alternatively**, you can just upload your compiled Rust functions to a [Function-as-a-Service (FaaS)](https://www.secondstate.io/faas/) and make it available as a web service.
+**Alternatively**, you can just upload your compiled Rust functions to a [Function-as-a-Service (FaaS)](https://www.secondstate.io/faas/) and make it available as a web service. [Check out this guide!](https://www.secondstate.io/articles/getting-started-with-function-as-a-service-in-rust/)
 
 ## Use Docker to build and run
 
