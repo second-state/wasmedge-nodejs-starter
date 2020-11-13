@@ -7,9 +7,9 @@
 ## How it works
 
 * The Rust function source code is in the `src/lib.rs` file.
-* Use the ssvmup tool to compile the Rust function into a WebAssembly module in the `pkg\` directory.
+* Use the [ssvmup tool](https://www.secondstate.io/articles/ssvmup/) to compile the Rust function into a WebAssembly module in the `pkg` directory.
 * Optional: Use the `node node/app.js` command to test the function locally in Node.js.
-* Upload the `pkg\*.wasm` file to the [Second State FaaS service](https://www.secondstate.io/articles/getting-started-with-function-as-a-service-in-rust/), OR to a [Node.js server](https://www.secondstate.io/articles/getting-started-with-rust-function/), to turn it into a web service.
+* Upload the `pkg/*.wasm` file to the [Second State FaaS service](https://www.secondstate.io/articles/getting-started-with-function-as-a-service-in-rust/), OR to a [Node.js server](https://www.secondstate.io/articles/getting-started-with-rust-function/), to turn it into a web service.
 
 This is the Docker edition. Check out the [Github Codespaces edition here](README-Codespaces.md).
 
