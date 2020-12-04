@@ -25,12 +25,19 @@ jobs:
 
     - name: Install apt-get packages
       run: |
-        sudo apt-get install build-essential curl wget git vim libboost-all-dev
+        sudo apt-get install build-essential curl wget git vim libboost-all-dev libjpeg-dev libpng-dev
+    
+    - name: Install Tensorflow
+      run: |
+        wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
+        sudo tar -C /usr/local -xzf libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
+        sudo ldconfig
     
     - name: Install npm packages
       run: |
         npm install -g ssvmup
         npm install ssvm
+        npm install ssvm-extensions
     
     - name: Build
       run: ssvmup build
