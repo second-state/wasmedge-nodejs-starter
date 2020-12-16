@@ -18,8 +18,8 @@ This is the Docker edition. Check out the [Github Codespaces edition here](READM
 Build the WebAssembly module.
 
 ```
-$ docker pull secondstate/ssvm-nodejs-starter:v2
-$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v2
+$ docker pull secondstate/ssvm-nodejs-starter
+$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter
 (docker) # cd /app
 (docker) # ssvmup build
 ```
