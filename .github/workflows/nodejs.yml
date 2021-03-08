@@ -25,6 +25,8 @@ jobs:
 
     - name: Install apt-get packages
       run: |
+        sudo apt-get update
+        sudo apt-get upgrade
         sudo apt-get install build-essential curl wget git vim libboost-all-dev libjpeg-dev libpng-dev
     
     - name: Install Tensorflow
