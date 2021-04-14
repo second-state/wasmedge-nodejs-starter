@@ -29,6 +29,9 @@ jobs:
         sudo ACCEPT_EULA=Y apt-get upgrade
         sudo apt-get install build-essential curl wget git vim libboost-all-dev libjpeg-dev libpng-dev
     
+    - name: Set Rust to required version
+      run: rustup override set 1.50.0
+    
     - name: Install Tensorflow
       run: |
         wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
