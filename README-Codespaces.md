@@ -2,12 +2,12 @@
 
 ![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/Build%20and%20test/badge.svg)
 
-[Fork this project](https://github.com/second-state/ssvm-nodejs-starter/fork) to create your own Rust functions as a web service.
+[Fork this project](https://github.com/second-state/wasmedge-nodejs-starter/fork) to create your own Rust functions as a web service.
 
 ## How it works
 
 * The Rust function source code is in the `src/lib.rs` file.
-* Use the [ssvmup tool](https://www.secondstate.io/articles/ssvmup/) to compile the Rust function into a WebAssembly module in the `pkg` directory.
+* Use the [rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) to compile the Rust function into a WebAssembly module in the `pkg` directory.
 * Optional: Use the `node node/app.js` command to test the function locally in Node.js.
 * Upload the `pkg/*.wasm` file to the [Second State FaaS service](https://www.secondstate.io/articles/getting-started-with-function-as-a-service-in-rust/), OR to a [Node.js server](https://www.secondstate.io/articles/getting-started-with-rust-function/), to turn it into a web service.
 
@@ -24,7 +24,7 @@ Open the `src/lib.rs` and `Cargo.toml` files to learn about the Rust function.
 Open the Terminal window via the `Terminal -> New Terminal` menu, and run the command and wait until it completes building.
 
 ```
-$ ssvmup build
+$ rustwasmc build
 ```
 
 ### Option 1: Upload to the FaaS and test
@@ -67,8 +67,8 @@ From the terminal window, start the Node.js application.
 Create a second terminal window, you can test the local server.
 
 ```
-$ curl http://localhost:3000/?name=SSVM
-hello SSVM
+$ curl http://localhost:3000/?name=WasmEdge
+hello WasmEdge
 ```
 
 ## More exercises
@@ -101,9 +101,8 @@ Build, deploy, test. You can find many more examples to play with here:
 
 ## Resources
 
-* [The Second State VM (SSVM)](https://github.com/second-state/ssvm) is a high performance [WebAssembly virtual machine](https://www.secondstate.io/ssvm/) designed for server-side applications.
-* [The SSVM NPM addon](https://github.com/second-state/ssvm-napi) provides access to the SSVM, and programs in it, through a Node.js host application.
-* [The SSVM ready tool, ssvmup](https://github.com/second-state/ssvmup) is a [toolchain](https://www.secondstate.io/articles/ssvmup/) for compiling Rust programs into WebAssembly, and then make them accessible from JavaScripts via the SSVM.
+* [The WasmEdge Runtime](https://github.com/WasmEdge/WasmEdge) is a high performance WebAssembly virtual machine.
+* [The rustwasmc](https://github.com/second-state/rustwasmc) is a [toolchain](https://www.secondstate.io/articles/ssvmup/) for compiling Rust programs into WebAssembly, and then make them accessible from JavaScripts via the WasmEdge Runtime.
 * [The Second State FaaS](https://github.com/second-state/wasm-joey) is an open source FaaS engine based on WebAssembly and Node.js.
 
 Brought to you by the Open source dev team at [Second State](https://www.secondstate.io/). Follow us on [Twitter](https://twitter.com/secondstateinc), [Facebook](https://www.facebook.com/SecondState.io/), [LinkedIn](https://www.linkedin.com/company/second-state/), [YouTube](https://www.youtube.com/channel/UCePMT5duHcIbJlwJRSOPDMQ), or [Medium](https://medium.com/wasm)
