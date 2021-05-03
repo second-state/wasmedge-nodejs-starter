@@ -14,8 +14,7 @@ RUN wget https://github.com/second-state/ssvm-tensorflow-deps/releases/download/
     && cp ./libtensorflowlite_c.so /usr/local/lib \
     && ldconfig
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
-    && source $HOME/.cargo/env \
-    && rustup override set 1.50.0
+    && $HOME/.cargo/bin/rustup override set 1.50.0
 RUN curl -sL https://deb.nodesource.com/setup_14.x |  bash \
     && apt-get install -y nodejs \
     && npm install -y -g rustwasmc --unsafe-perm \
