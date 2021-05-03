@@ -17,12 +17,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: "Rebuild secondstate/ssvm-nodejs-starter:latest"
+      - name: "Rebuild secondstate/wasmedge-nodejs-starter:latest"
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-          repository: secondstate/ssvm-nodejs-starter
+          repository: secondstate/wasmedge-nodejs-starter
           tags: latest
           add_git_labels: true
           always_pull: true
