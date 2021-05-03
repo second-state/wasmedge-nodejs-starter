@@ -1,5 +1,5 @@
 [package]
-name = "ssvm_nodejs_starter"
+name = "wasmedge_nodejs_starter"
 version = "0.1.0"
 authors = ["ubuntu"]
 edition = "2018"
@@ -8,7 +8,7 @@ edition = "2018"
 wasm-opt = ['-O4']
 
 [lib]
-name = "ssvm_nodejs_starter_lib"
+name = "wasmedge_nodejs_starter_lib"
 path = "src/lib.rs"
 crate-type =["cdylib"]
 
