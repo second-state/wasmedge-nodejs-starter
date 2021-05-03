@@ -15,7 +15,7 @@ RUN wget https://github.com/second-state/ssvm-tensorflow-deps/releases/download/
     && ldconfig
 RUN curl -sL https://deb.nodesource.com/setup_14.x |  bash \
     && apt-get install -y nodejs \
-    && npm install -y -g ssvmup --unsafe-perm \
+    && npm install -y -g rustwasmc --unsafe-perm \
     && npm install -y ssvm \
     && npm install -y ssvm-extensions
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
