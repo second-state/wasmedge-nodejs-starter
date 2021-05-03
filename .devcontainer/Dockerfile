@@ -13,12 +13,14 @@ RUN wget https://github.com/second-state/ssvm-tensorflow-deps/releases/download/
     && tar -zxvf ssvm-tensorflow-deps-lite-0.1.0-linux-x64.tar.gz \
     && cp ./libtensorflowlite_c.so /usr/local/lib \
     && ldconfig
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
+    && source $HOME/.cargo/env \
+    && rustup override set 1.50.0
 RUN curl -sL https://deb.nodesource.com/setup_14.x |  bash \
     && apt-get install -y nodejs \
     && npm install -y -g rustwasmc --unsafe-perm \
     && npm install -y ssvm \
     && npm install -y ssvm-extensions
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
