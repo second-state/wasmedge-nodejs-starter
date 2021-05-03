@@ -40,12 +40,12 @@ jobs:
     
     - name: Install npm packages
       run: |
-        npm install -g ssvmup
+        npm install -g rustwasmc
         npm install ssvm
         npm install ssvm-extensions
     
     - name: Build
-      run: ssvmup build
+      run: rustwasmc build
       
     - name: Test
       run: |
