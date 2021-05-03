@@ -1,8 +1,8 @@
 # Getting started
 
-![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/Build%20and%20test/badge.svg)
+![Build and test](https://github.com/second-state/wasmedge-nodejs-starter/workflows/Build%20and%20test/badge.svg)
 
-[Fork this project](https://github.com/second-state/ssvm-nodejs-starter/fork) to create your own Rust functions as a web service.
+[Fork this project](https://github.com/second-state/wasmedge-nodejs-starter/fork) to create your own Rust functions as a web service.
 
 ## How it works
 
@@ -18,8 +18,8 @@ This is the Docker edition. Check out the [Github Codespaces edition here](READM
 Build the WebAssembly module.
 
 ```
-$ docker pull secondstate/ssvm-nodejs-starter
-$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter
+$ docker pull secondstate/wasmedge-nodejs-starter
+$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/wasmedge-nodejs-starter
 (docker) # cd /app
 (docker) # rustwasmc build
 ```
