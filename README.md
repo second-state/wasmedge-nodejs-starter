@@ -90,7 +90,6 @@ Now, you can copy and paste code from [this project](https://github.com/second-s
   * [The Case for WebAssembly on the Server-side](https://www.secondstate.io/articles/why-webassembly-server/)
   * [Getting started on Rust and WebAssembly for server-side apps](https://www.secondstate.io/articles/getting-started-with-rust-function/)
   * [Passing function arguments in JSON](https://www.secondstate.io/articles/rust-functions-in-nodejs/)
-  * [Access operating system resources from WebAssembly (WASI)](https://www.secondstate.io/articles/wasi-access-system-resources/)
   * [Use Tensorflow and AI models from WebAssembly](https://www.secondstate.io/articles/face-detection-ai-as-a-service/)
 
 ## Resources
