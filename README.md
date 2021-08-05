@@ -20,7 +20,7 @@ Build the WebAssembly module.
 ```
 $ docker pull secondstate/wasmedge-nodejs-starter
 $ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/wasmedge-nodejs-starter
-(docker) # cd /app
+(docker) # cd /app/wasmedge-nodejs-starter/
 (docker) # rustwasmc build
 ```
 
