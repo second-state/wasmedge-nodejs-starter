@@ -36,20 +36,20 @@ jobs:
     - name: Install npm packages
       run: |
         npm install -g rustwasmc
-        npm install wasmedge-extensions
+        npm install wasmedge-core
     
     - name: Build
       run: |
         rustup override set 1.50.0
-        rustwasmc build --enable-ext
+        rustwasmc build
       
-    - name: Test
-      run: |
-        node node/test.js
-        rustwasmc clean
+    # - name: Test
+    #   run: |
+    #     node node/test.js
+    #     rustwasmc clean
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: ubuntu-18.04-nodejs-${{ matrix.node-version }}
-        path: node
+    # - name: Upload artifact
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: ubuntu-18.04-nodejs-${{ matrix.node-version }}
+    #     path: node
