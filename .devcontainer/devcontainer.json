@@ -16,7 +16,7 @@
 		"dbaeumer.vscode-eslint"
 	],
 
-	"forwardPorts": [3000]
+	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "bash -l"
