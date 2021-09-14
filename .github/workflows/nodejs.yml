@@ -36,12 +36,12 @@ jobs:
     - name: Install npm packages
       run: |
         npm install -g rustwasmc
-        sudo npm install wasmedge-core
+        npm install wasmedge-extensions
     
     - name: Build
       run: |
         rustup override set 1.50.0
-        rustwasmc build
+        rustwasmc build --enable-ext
       
     - name: Test
       run: |
