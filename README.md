@@ -18,13 +18,28 @@ This is the Docker edition. Check out the [Github Codespaces edition here](READM
 Build the WebAssembly module.
 
 ```
-$ docker pull secondstate/wasmedge-nodejs-starter
-$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/wasmedge-nodejs-starter
+$ docker pull wasmedge/appdev_x86_64
+$ docker run -p 3000:3000 --rm -it -v $(pwd):/app wasmedge/appdev_x86_64
 (docker) # cd /app
 (docker) # rustwasmc build
 ```
 
-### Option 1: Upload to the FaaS and test
+### Test and debug
+
+From the first terminal window, start the Node.js application.
+
+```
+(docker) # node node/app.js
+```
+
+From a second terminal window, you can test the local server.
+
+```
+$ curl http://localhost:3000/?name=WasmEdge
+hello WasmEdge
+```
+
+### Optional: Upload to the FaaS and test
 
 Upload the wasm file in the pkg folder to the FaaS. Double check the .wasm file name before you upload.
 
@@ -51,21 +66,6 @@ hello Second State FaaS
 ```
 
 You can easily incorporate this web service into your HTML web pages. [See how](https://www.secondstate.io/articles/getting-started-with-function-as-a-service-in-rust/#web-ui)
-
-### Option 2: Local test and debug
-
-From the first terminal window, start the Node.js application.
-
-```
-(docker) # node node/app.js
-```
-
-From a second terminal window, you can test the local server.
-
-```
-$ curl http://localhost:3000/?name=WasmEdge
-hello WasmEdge
-```
 
 ## More exercises
 
