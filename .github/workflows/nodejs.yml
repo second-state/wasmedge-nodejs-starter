@@ -36,7 +36,7 @@ jobs:
     - name: Install npm packages
       run: |
         npm install -g rustwasmc
-        npm install wasmedge-extensions
+        npm install wasmedge-core
     
     - name: Build
       run: |
