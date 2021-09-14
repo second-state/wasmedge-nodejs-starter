@@ -24,6 +24,8 @@ $ docker run -p 3000:3000 --rm -it -v $(pwd):/app wasmedge/appdev_x86_64
 (docker) # rustwasmc build
 ```
 
+> If you want use this on an ARM64 machine, pull the `wasmedge/appdev_aarch64` Docker image.
+
 ### Test and debug
 
 From the first terminal window, start the Node.js application.
