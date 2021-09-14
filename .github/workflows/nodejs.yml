@@ -35,8 +35,8 @@ jobs:
         
     - name: Install npm packages
       run: |
-        npm install -g rustwasmc
-        npm install wasmedge-core
+        npm install -g rustwasmc --unsafe-perm
+        npm install wasmedge-core --unsafe-perm
     
     - name: Build
       run: |
