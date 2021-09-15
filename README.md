@@ -11,22 +11,26 @@
 * Optional: Use the `node node/app.js` command to test the function locally in Node.js.
 * Upload the `pkg/*.wasm` file to the [Second State FaaS service](https://www.secondstate.io/articles/getting-started-with-function-as-a-service-in-rust/), OR to a [Node.js server](https://www.secondstate.io/articles/getting-started-with-rust-function/), to turn it into a web service.
 
-This is the Docker edition. Check out the [Github Codespaces edition here](README-Codespaces.md).
+## Setup
 
-## Docker
-
-Build the WebAssembly module.
+It is easy to use our `appdev` Docker image to run the dev environment. You can choose from `x86_64` or `aarch64` versions of the image. Alternatively, you could also use Github Codespaces to run the following example.
 
 ```
 $ docker pull wasmedge/appdev_x86_64
 $ docker run -p 3000:3000 --rm -it -v $(pwd):/app wasmedge/appdev_x86_64
+(docker) #
+```
+
+## Build
+
+Use the `rustwasmc` command to build the Rust function into a WebAssembly bytecode file.
+
+```
 (docker) # cd /app
 (docker) # rustwasmc build
 ```
 
-> If you want use this on an ARM64 machine, pull the `wasmedge/appdev_aarch64` Docker image.
-
-### Test and debug
+## Test and debug
 
 From the first terminal window, start the Node.js application.
 
