@@ -43,13 +43,13 @@ jobs:
         rustup override set 1.50.0
         rustwasmc build
       
-    # - name: Test
-    #   run: |
-    #     node node/test.js
-    #     rustwasmc clean
+    - name: Test
+      run: |
+        node node/test.js
+        rustwasmc clean
 
-    # - name: Upload artifact
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: ubuntu-18.04-nodejs-${{ matrix.node-version }}
-    #     path: node
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: ubuntu-18.04-nodejs-${{ matrix.node-version }}
+        path: node
