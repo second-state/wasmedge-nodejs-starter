@@ -45,6 +45,7 @@ jobs:
       
     - name: Test
       run: |
+        source $HOME/.profile
         node node/test.js
         rustwasmc clean
 
