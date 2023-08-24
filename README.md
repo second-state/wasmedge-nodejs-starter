@@ -1,3 +1,7 @@
+# Info
+
+This project is no longer updated. If you are interested in using javascript, please refer to [the wasmedge-quickjs repo](https://github.com/second-state/wasmedge-quickjs)
+
 # Getting started
 
 ![Build and test](https://github.com/second-state/wasmedge-nodejs-starter/workflows/Build%20and%20test/badge.svg)
